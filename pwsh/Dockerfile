@@ -1,4 +1,4 @@
-from alpine:latest
+FROM alpine:latest
 
 # install the requirements
 RUN apk add --no-cache \
@@ -34,4 +34,4 @@ ENV GROUP_NAME=MyADGroup
 # Start PowerShell
 COPY  check_ad2.ps1  /apps
 CMD chmod 755 /apps/check_ad2.ps1 
-CMD /usr/bin/pwsh  /apps/check_ad2.ps1 
+CMD /apps/check_ad2.ps1 
