@@ -1,8 +1,6 @@
-#!/usr/bin/env python
+#!/opt/local/bin/python
 
-import schedule
-import time
-from pyad import *
+from pyad import aduser
 import os
 
 # Read the sensitive data from environment variables
@@ -24,12 +22,4 @@ def check_ad_group():
     print(f"Members of {ad_group_name}:")
     for member in group.get_members():
         print(member)
-
-# Schedule the job to run every day at 9:00 AM
-schedule.every().day.at("09:00").do(check_ad_group)
-
-# Run the scheduled job indefinitely
-while True:
-    schedule.run_pending()
-    time.sleep(1)
 
